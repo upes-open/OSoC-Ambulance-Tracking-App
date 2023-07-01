@@ -10,13 +10,12 @@
 
 
 
-*Contributor banner *Fork banner *Star banner *Issues banner
 ![GitHub contributors](https://img.shields.io/github/contributors/upes-open/OSoC-Ambulance-Tracking-App) ![GitHub forks](https://img.shields.io/github/forks/upes-open/OSoC-Ambulance-Tracking-App) ![GitHub Repo stars](https://img.shields.io/github/stars/upes-open/OSoC-Ambulance-Tracking-App) ![GitHub issues](https://img.shields.io/github/issues/upes-open/OSoC-Ambulance-Tracking-App)
 
-contributor banner: https://shields.io/badges/git-hub-contributors
+<!--- contributor banner: https://shields.io/badges/git-hub-contributors
 fork banner: https://shields.io/badges/git-hub-forks
 star banner: https://shields.io/badges/git-hub-repo-stars
-issues banner: https://shields.io/badges/git-hub-issues
+issues banner: https://shields.io/badges/git-hub-issues--->
 
 </div>
 
