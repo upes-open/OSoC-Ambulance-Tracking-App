@@ -23,15 +23,7 @@ The ambulance tracking app is a one-stop solution in case of a medical emergency
 
 ### Tech Stack
 
-NodeJs : ![Static Badge](https://img.shields.io/badge/NodeJS-101010?logo=nodedotjs&logoColor=%23339933)
-
-MongoDB : ![Static Badge](https://img.shields.io/badge/MongoDB-101010?logo=mongodb&logoColor=%2347A248)
-
-Docker: ![Static Badge](https://img.shields.io/badge/Docker-101010?logo=docker&logoColor=%232496ED)
-
-aws s3: ![Static Badge](https://img.shields.io/badge/Amazon%20S3-101010?logo=amazons3&logoColor=%23569A31)
-
-flutter: ![Static Badge](https://img.shields.io/badge/Flutter-202020?logo=flutter&logoColor=%2302569B)
+NodeJs : ![Static Badge](https://img.shields.io/badge/NodeJS-101010?logo=nodedotjs&logoColor=%23339933)   MongoDB : ![Static Badge](https://img.shields.io/badge/MongoDB-101010?logo=mongodb&logoColor=%2347A248)   Docker: ![Static Badge](https://img.shields.io/badge/Docker-101010?logo=docker&logoColor=%232496ED)   aws s3: ![Static Badge](https://img.shields.io/badge/Amazon%20S3-101010?logo=amazons3&logoColor=%23569A31)   flutter: ![Static Badge](https://img.shields.io/badge/Flutter-202020?logo=flutter&logoColor=%2302569B)
 
 
 ### Contributing
