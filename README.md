@@ -26,25 +26,39 @@ The ambulance tracking app is a one-stop solution in case of a medical emergency
 
 
 ### Contributing
-> * Fork and Star the project.
->
-> Clone the repo on your local machine.
->
-```bash
-git clone https://github.com/upes-open/OSoC-Ambulance-Tracking-App.git
+1. Fork the Project
+2. Clone your forked repository
+
+```sh
+ git clone https://github.com/<your_github_username>/OSoC-Ambulance-Tracking-App.git
 ```
->
-> * Create a new branch `<Your_GitHub_username>`
->
-```bash
-git checkout -b <GitHub_usename>
-```
->
-> * Go to the issues tab and comment on a suitable issue of your choice and wait for the issue to be assigned to you.
->
-> * Make the changes in your local repo and push the changes.
->
-> * Create a pull request to the main branch.
+3. Now go ahead and create a new branch and move to the branch
+   ```sh
+   git checkout -b fix-issue-<ISSUE-NUMBER>
+   ```
+4. After you have added your changes, follow the following command chain
+   * Check the changed files
+    ```sh
+     git status -s
+     ```
+
+   * Add all the files to the staging area
+      ```sh
+     git add .
+     ```
+     or
+     ```sh
+     git add <file_name1> <file_name2>
+     ```
+   * Commit your changes
+    ```sh
+     git commit -m "<EXPLAIN-YOUR_CHANGES>"
+     ```
+5. Push your changes
+   ```sh
+   git push origin fix-issue-<ISSUE-NUMBER>
+   ```
+6. Open a Pull Request 
 >
 > * Wait for the PR to be reviewed and merged.
 >
