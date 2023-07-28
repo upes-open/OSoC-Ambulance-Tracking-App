@@ -2,14 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:login_authentcation/Pages/login.dart';
 
-class Signup extends StatefulWidget {
-  Signup({Key? key}) : super(key: key);
-
+class HospitalSignup extends StatefulWidget {
+  HospitalSignup({Key? key}) : super(key: key);
+  static const routeName = "/hospital-signup";
   @override
-  _SignupState createState() => _SignupState();
+  _HospitalSignupState createState() => _HospitalSignupState();
 }
 
-class _SignupState extends State<Signup> {
+class _HospitalSignupState extends State<HospitalSignup> {
   final _formKey = GlobalKey<FormState>();
 
   var email = "";
@@ -101,8 +101,9 @@ class _SignupState extends State<Signup> {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  SizedBox(height: 50),
                   Image.asset(
-                    'assets/2nd.png',
+                    'assets/hospital.png',
                     height: 200.0,
                   ),
                   SizedBox(height: 20.0),
@@ -166,7 +167,7 @@ class _SignupState extends State<Signup> {
                   SizedBox(height: 10.0),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 25, 161, 219),
+                      primary: Colors.red,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
@@ -184,7 +185,7 @@ class _SignupState extends State<Signup> {
                     },
                     child: Text(
                       'SignUp',
-                      style: TextStyle(color: Colors.black87, fontSize: 18.0),
+                      style: TextStyle(color: Colors.white, fontSize: 18.0),
                     ),
                   ),
                   SizedBox(height: 10.0),
@@ -194,7 +195,7 @@ class _SignupState extends State<Signup> {
                       Text(
                         "Already have an Account? ",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 15, 9, 121),
+                          color: Colors.black,
                           fontSize: 14.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -202,20 +203,12 @@ class _SignupState extends State<Signup> {
                       SizedBox(height: 10.0),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            PageRouteBuilder(
-                              pageBuilder: (context, animation1, animation2) =>
-                                  Login(),
-                              transitionDuration: Duration(seconds: 0),
-                            ),
-                          );
+                          Navigator.pushNamed(context, "/hospital-login");
                         },
                         child: Text(
                           'Login',
                           style: TextStyle(
-                              color: Color.fromARGB(255, 100, 33, 89),
-                              fontWeight: FontWeight.bold),
+                              color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
