@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:login_authentcation/Pages/auth/front_screen.dart';
 import 'package:login_authentcation/Pages/login.dart';
+import 'package:login_authentcation/routes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,9 +24,10 @@ class MyApp extends StatelessWidget {
             return Center(child: CircularProgressIndicator());
           }
           return MaterialApp(
+            onGenerateRoute: generateRoute,
             title: 'Flutter Firebase EMail Password Auth',
             debugShowCheckedModeBanner: false,
-            home: Login(),
+            home: FrontScreen(),
           );
         });
   }
