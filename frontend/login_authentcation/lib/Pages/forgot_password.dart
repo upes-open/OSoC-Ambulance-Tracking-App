@@ -57,142 +57,119 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFFFFC800),
-                  Colors.orange.shade800,
-                ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: 50),
+              Center(
+                child: Text(
+                  'Reset Link will be sent to your email id!',
+                  style: TextStyle(color: Colors.black, fontSize: 20.0),
+                ),
               ),
-            ),
-          ),
-          SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Center(
-                    child: Text(
-                      'Reset Link will be sent to your email id!',
-                      style: TextStyle(color: Colors.black, fontSize: 20.0),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Image.asset(
-                    'assets/fp.png',
-                    height: 200.0,
-                  ),
-                  SizedBox(height: 20.0),
-                  Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 10.0),
-                          child: TextFormField(
-                            autofocus: false,
-                            decoration: InputDecoration(
-                              labelText: 'Email: ',
-                              labelStyle: TextStyle(fontSize: 20.0),
-                              border: OutlineInputBorder(),
-                              errorStyle: TextStyle(
-                                  color: Colors.redAccent, fontSize: 15),
+              SizedBox(height: 20.0),
+              Image.asset(
+                'assets/fp.png',
+                height: 200.0,
+              ),
+              SizedBox(height: 20.0),
+              Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10.0),
+                      child: TextFormField(
+                        autofocus: false,
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2.0,
                             ),
-                            controller: emailController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please Enter Email';
-                              } else if (!value.contains('@')) {
-                                return 'Please Enter Valid Email';
-                              }
-                              return null;
-                            },
                           ),
+                          labelText: 'Email: ',
+                          labelStyle: TextStyle(fontSize: 20.0),
+                          border: OutlineInputBorder(),
+                          errorStyle:
+                              TextStyle(color: Colors.redAccent, fontSize: 15),
                         ),
-                        // Add more form fields as needed
-
-                        SizedBox(height: 20.0),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 25, 161, 219),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            padding: EdgeInsets.symmetric(vertical: 15.0),
-                          ),
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              setState(() {
-                                email = emailController.text;
-                              });
-                              resetPassword();
-                            }
-                          },
-                          child: Text(
-                            'Send Email',
-                            style: TextStyle(fontSize: 18.0),
-                          ),
-                        ),
-                        SizedBox(height: 15.0),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pushAndRemoveUntil(
-                              context,
-                              PageRouteBuilder(
-                                pageBuilder: (context, a, b) => Login(),
-                                transitionDuration: Duration(seconds: 0),
-                              ),
-                              (route) => false,
-                            );
-                          },
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 100, 33, 89),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Don't have an Account? "),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            PageRouteBuilder(
-                              pageBuilder: (context, a, b) => Signup(),
-                              transitionDuration: Duration(seconds: 0),
-                            ),
-                            (route) => false,
-                          );
+                        controller: emailController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please Enter Email';
+                          } else if (!value.contains('@')) {
+                            return 'Please Enter Valid Email';
+                          }
+                          return null;
                         },
-                        child: Text(
-                          'Signup',
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 100, 33, 89),
-                              fontWeight: FontWeight.bold),
-                        ),
                       ),
-                    ],
+                    ),
+                    // Add more form fields as needed
+
+                    SizedBox(height: 20.0),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        padding: EdgeInsets.symmetric(vertical: 15.0),
+                      ),
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          setState(() {
+                            email = emailController.text;
+                          });
+                          resetPassword();
+                        }
+                      },
+                      child: Text(
+                        'Send Email',
+                        style: TextStyle(fontSize: 18.0),
+                      ),
+                    ),
+                    SizedBox(height: 15.0),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't have an Account? "),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      'Signup',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
