@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:view_hospital/Pages/Page4.dart';
+import 'package:view_hospital/Patient_Details/Page4.dart';
 
 class Page2 extends StatelessWidget {
   const Page2({Key? key}) : super(key: key);
@@ -7,7 +7,7 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Color.fromARGB(255, 0, 150, 136),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.0),
         child: ClipPath(

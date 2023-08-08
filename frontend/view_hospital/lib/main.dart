@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:view_hospital/Pages/Page1.dart';
+import 'package:view_hospital/MainPage.dart';
 
 void main() {
   runApp(MyApp());

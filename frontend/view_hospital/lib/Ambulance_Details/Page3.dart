@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:view_hospital/Pages/Page2.dart';
+import 'package:view_hospital/Ambulance_Details/Page5.dart';
+import 'package:view_hospital/Ambulance_Details/Page6.dart';
+import 'package:view_hospital/Ambulance_Details/Page7.dart';
+import 'package:view_hospital/Ambulance_Details/Page8.dart';
 
 class Page3 extends StatelessWidget {
   const Page3({super.key});
@@ -28,6 +31,18 @@ class Page3 extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
+            actions: <Widget>[
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Page5()),
+                  );
+                },
+                icon: Icon(Icons.person_add_alt_outlined),
+                color: Colors.black,
+              ),
+            ],
           ),
         ),
       ),
@@ -53,7 +68,7 @@ class Page3 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Page2()),
+                  MaterialPageRoute(builder: (context) => Page6()),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -65,7 +80,7 @@ class Page3 extends StatelessWidget {
                 minimumSize: Size(300, 50),
               ),
               child: Text(
-                'Available',
+                'Available Drivers',
                 style: TextStyle(
                   color: Colors.black,
                 ),
@@ -76,7 +91,7 @@ class Page3 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Page2()),
+                  MaterialPageRoute(builder: (context) => Page7()),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -88,7 +103,7 @@ class Page3 extends StatelessWidget {
                 minimumSize: Size(300, 50),
               ),
               child: Text(
-                'Working',
+                'Working Drivers',
                 style: TextStyle(
                   color: Colors.black,
                 ),
@@ -99,7 +114,7 @@ class Page3 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Page3()),
+                  MaterialPageRoute(builder: (context) => Page8()),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -111,7 +126,7 @@ class Page3 extends StatelessWidget {
                 minimumSize: Size(300, 50),
               ),
               child: Text(
-                'Offline',
+                "Offline Drivers",
                 style: TextStyle(
                   color: Colors.black,
                 ),
@@ -121,5 +136,24 @@ class Page3 extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ParabolicClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path()
+      ..moveTo(0, size.height)
+      ..quadraticBezierTo(
+          size.width / 2, size.height * 0.75, size.width, size.height)
+      ..lineTo(size.width, 0)
+      ..lineTo(0, 0)
+      ..close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return true;
   }
 }

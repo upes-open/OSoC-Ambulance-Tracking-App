@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:view_hospital/Pages/Page2.dart';
-import 'package:view_hospital/Pages/Page3.dart';
-import '../Drawer/drawer_widget.dart';
+import 'package:view_hospital/Patient_Details/Page2.dart';
+import 'package:view_hospital/Ambulance_Details/Page3.dart';
+import 'Drawer/drawer_widget.dart';
 
 class Page1 extends StatelessWidget {
   const Page1({Key? key}) : super(key: key);
