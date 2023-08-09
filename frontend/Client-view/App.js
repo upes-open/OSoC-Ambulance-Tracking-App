@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import NextPage from './NextPage'; // Import the NextPage component
-import ProfileScreen from './ProfileScreen'; // Import the ProfileScreen component
+import NextPage from './NextPage'; // Import NextPage component
+import ProfileScreen from './ProfileScreen'; // Import ProfileScreen component
 import FAQScreen from './FAQScreen'; // Import the FAQScreen component
 
 const Stack = createStackNavigator();
